@@ -1,8 +1,20 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+import { fontFamily } from "tailwindcss/defaultTheme";
+
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        mont: ["var(--font-mont)", ...fontFamily.sans],
+      },
+      colors: {
+        dark: "#1b1b1b",
+        light: "#f5f5f5",
+        primary: "#863E96",
+        primaryDark: "#58E609",
+      },
+    },
   },
   plugins: [],
 };
