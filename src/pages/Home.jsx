@@ -48,7 +48,7 @@ const Home = () => {
         </div>
       </div>
       <HireMe />
-      <div className="absolute right-8 bottom-2 inline-block w-24">
+      <div className="absolute right-2   top-10 inline-block w-24">
         <img src={lightBulb} alt="Filament" className="w-full h-auto" />
       </div>
     </main>
