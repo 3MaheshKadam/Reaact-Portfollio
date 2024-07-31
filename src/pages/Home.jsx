@@ -4,6 +4,8 @@ import profilePic from "../assets/profile/profile/developer-pic-1.png";
 import AnimatedText from "../components/AnimatedText";
 import dummy from "../assets/dummy.pdf"; // Ensure the path to the PDF is correct
 import { LinkArrow } from "../components/Icons.jsx";
+import HireMe from "../components/HireMe .jsx";
+import lightBulb from "../assets/profile/svgs/miscellaneous_icons_1.svg";
 const Home = () => {
   return (
     <main className="flex items-center text-dark w-full min-h-screen">
@@ -44,6 +46,10 @@ const Home = () => {
             </div>
           </div>
         </div>
+      </div>
+      <HireMe />
+      <div className="absolute right-8 bottom-2 inline-block w-24">
+        <img src={lightBulb} alt="Filament" className="w-full h-auto" />
       </div>
     </main>
   );
