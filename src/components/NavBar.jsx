@@ -55,7 +55,7 @@ const NavBar = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="w-full px-4 py-4 font-medium flex flex-wrap items-center justify-between bg-white dark:bg-gray-800 shadow-md relative">
+    <header className="w-full px-4 py-4 font-medium flex flex-wrap items-center justify-between bg-white dark:bg-gray-800 shadow-md relative z-10">
       {/* Logo */}
       <div className="flex items-center justify-between w-full sm:w-auto">
         <Logo />
