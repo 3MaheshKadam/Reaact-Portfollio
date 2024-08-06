@@ -2,13 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Logo from "./Logo.jsx";
-import {
-  GithubIcon,
-  TwitterIcon,
-  LinkedInIcon,
-  SunIcon,
-  MoonIcon,
-} from "./Icons.jsx";
+import { GithubIcon, TwitterIcon, LinkedInIcon } from "./Icons.jsx";
 
 // Define animation variants
 const iconVariants = {
@@ -55,12 +49,12 @@ const NavBar = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="w-full px-4 py-4 font-medium flex flex-wrap items-center justify-between bg-white dark:bg-gray-800 shadow-md relative z-10">
+    <header className="w-full px-4 py-4 font-medium flex flex-wrap items-center justify-between bg-gray-800 shadow-md relative">
       {/* Logo */}
       <div className="flex items-center justify-between w-full sm:w-auto">
         <Logo />
         <button
-          className="block sm:hidden px-2 py-1 text-gray-700 dark:text-gray-300"
+          className="block sm:hidden px-2 py-1 text-white"
           onClick={toggleMenu}
         >
           <svg
@@ -85,28 +79,24 @@ const NavBar = () => {
         ref={menuRef}
         className={`${
           isMenuOpen ? "block" : "hidden"
-        } sm:hidden absolute top-full left-0 w-full bg-white dark:bg-gray-800 shadow-md flex flex-col items-center py-4`}
+        } sm:hidden absolute top-full left-0 w-full bg-white shadow-md flex flex-col items-center py-4 z-10`}
       >
         <nav className="flex flex-col items-center w-full">
-          <CustomLink
-            to="/"
-            title="Home"
-            className="py-2 px-4 text-gray-700 dark:text-gray-300"
-          />
+          <CustomLink to="/" title="Home" className="py-2 px-4 text-white" />
           <CustomLink
             to="/about"
             title="About"
-            className="py-2 px-4 text-gray-700 dark:text-gray-300"
+            className="py-2 px-4 text-white"
           />
           <CustomLink
             to="/projects"
             title="Projects"
-            className="py-2 px-4 text-gray-700 dark:text-gray-300"
+            className="py-2 px-4 text-white"
           />
           <CustomLink
             to="/experience"
             title="Experience"
-            className="py-2 px-4 text-gray-700 dark:text-gray-300"
+            className="py-2 px-4 text-white"
           />
         </nav>
 
@@ -114,7 +104,7 @@ const NavBar = () => {
           <motion.a
             href="https://github.com/3maheshkadam"
             target="_blank"
-            className="w-6 text-gray-700 dark:text-gray-300"
+            className="w-6 text-white"
             rel="noopener noreferrer"
             initial="hidden"
             animate="visible"
@@ -126,7 +116,7 @@ const NavBar = () => {
           <motion.a
             href="https://linkedin.com/in/mahesh-kadam-6a9b13219"
             target="_blank"
-            className="w-6 text-gray-700 dark:text-gray-300"
+            className="w-6 text-white"
             rel="noopener noreferrer"
             initial="hidden"
             animate="visible"
@@ -138,7 +128,7 @@ const NavBar = () => {
           <motion.a
             href="https://x.com/maheshkadam2524"
             target="_blank"
-            className="w-6 text-gray-700 dark:text-gray-300"
+            className="w-6 text-white"
             rel="noopener noreferrer"
             initial="hidden"
             animate="visible"
@@ -147,54 +137,26 @@ const NavBar = () => {
           >
             <TwitterIcon />
           </motion.a>
-          <motion.a
-            href="/"
-            target="_blank"
-            className="w-6 text-gray-700 dark:text-gray-300"
-            rel="noopener noreferrer"
-            initial="hidden"
-            animate="visible"
-            whileHover="hover"
-            variants={iconVariants}
-          >
-            <SunIcon />
-          </motion.a>
-          <motion.a
-            href="/"
-            target="_blank"
-            className="w-6 text-gray-700 dark:text-gray-300"
-            rel="noopener noreferrer"
-            initial="hidden"
-            animate="visible"
-            whileHover="hover"
-            variants={iconVariants}
-          >
-            <MoonIcon />
-          </motion.a>
         </nav>
       </div>
 
       {/* Desktop Menu */}
       <nav className="hidden sm:flex sm:items-center sm:space-x-4">
-        <CustomLink
-          to="/"
-          title="Home"
-          className="py-2 px-4 text-gray-700 dark:text-gray-300"
-        />
+        <CustomLink to="/" title="Home" className="py-2 px-4 text-white" />
         <CustomLink
           to="/about"
           title="About"
-          className="py-2 px-4 text-gray-700 dark:text-gray-300"
+          className="py-2 px-4 text-white"
         />
         <CustomLink
           to="/projects"
           title="Projects"
-          className="py-2 px-4 text-gray-700 dark:text-gray-300"
+          className="py-2 px-4 text-white"
         />
         <CustomLink
           to="/experience"
           title="Experience"
-          className="py-2 px-4 text-gray-700 dark:text-gray-300"
+          className="py-2 px-4 text-white"
         />
       </nav>
 
@@ -203,7 +165,7 @@ const NavBar = () => {
         <motion.a
           href="https://github.com/3maheshkadam"
           target="_blank"
-          className="w-6 text-gray-700 dark:text-gray-300"
+          className="w-6 text-white"
           rel="noopener noreferrer"
           initial="hidden"
           animate="visible"
@@ -215,7 +177,7 @@ const NavBar = () => {
         <motion.a
           href="https://linkedin.com/in/mahesh-kadam-6a9b13219"
           target="_blank"
-          className="w-6 text-gray-700 dark:text-gray-300"
+          className="w-6 text-gray-700"
           rel="noopener noreferrer"
           initial="hidden"
           animate="visible"
@@ -227,7 +189,7 @@ const NavBar = () => {
         <motion.a
           href="https://x.com/maheshkadam2524"
           target="_blank"
-          className="w-6 text-gray-700 dark:text-gray-300"
+          className="w-6 text-gray-700"
           rel="noopener noreferrer"
           initial="hidden"
           animate="visible"
@@ -235,30 +197,6 @@ const NavBar = () => {
           variants={iconVariants}
         >
           <TwitterIcon />
-        </motion.a>
-        <motion.a
-          href="/"
-          target="_blank"
-          className="w-6 text-gray-700 dark:text-gray-300"
-          rel="noopener noreferrer"
-          initial="hidden"
-          animate="visible"
-          whileHover="hover"
-          variants={iconVariants}
-        >
-          <SunIcon />
-        </motion.a>
-        <motion.a
-          href="/"
-          target="_blank"
-          className="w-6 text-gray-700 dark:text-gray-300"
-          rel="noopener noreferrer"
-          initial="hidden"
-          animate="visible"
-          whileHover="hover"
-          variants={iconVariants}
-        >
-          <MoonIcon />
         </motion.a>
       </nav>
     </header>

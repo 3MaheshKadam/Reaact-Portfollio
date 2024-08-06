@@ -16,9 +16,9 @@ const Home = () => {
   return (
     <main className="flex items-center text-dark w-full min-h-screen ">
       <div className=" absolute  left-2 flex   top-20 pt-4 px-2 gap-2   ">
-        <img src={reactt} alt="React" className="w-12 h-12 mb-2" />
         <img src={mongo} alt="MongoDB" className="w-12 h-12 mb-2" />
         <img src={express} alt="Express" className="w-12 h-12 mb-2" />
+        <img src={reactt} alt="React" className="w-12 h-12 mb-2" />
         <img src={node} alt="Node.js" className="w-12 h-12 mb-2" />
         <img src={next} alt="Next.js" className="w-12 h-12 mb-2" />
       </div>
