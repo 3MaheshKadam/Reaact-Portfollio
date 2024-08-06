@@ -13,18 +13,18 @@ const About = () => {
           content="A passionate web developer specializing in dynamic applications and modern technologies."
         />
       </Helmet>
-      <main className="flex w-full flex-col items-center justify-center">
+      <main className="flex w-full flex-col items-center justify-center bg-light dark:bg-dark text-dark dark:text-light">
         <div className="p-4 sm:p-8">
           <AnimatedText
             text="Solutions with Impact !"
-            className="sm:text-3xl md:text-4xl !text-6xl "
+            className="sm:text-3xl md:text-4xl !text-6xl"
           />
           <div className="mt-10 grid w-full grid-cols-1 md:grid-cols-8 lg:grid-cols-6 gap-8 md:gap-16">
-            <div className="md:col-span-6 lg:col-span-4 bg-slate-300 flex flex-col items-start justify-start py-4 sm:py-8 ">
-              <h2 className=" px-4 sm:px-24 mb-4 text-lg font-bold uppercase text-dark/75">
+            <div className="md:col-span-6 lg:col-span-4 bg-gray-300 dark:bg-gray-800 flex flex-col items-start justify-start py-4 sm:py-8">
+              <h2 className="px-4 sm:px-24 mb-4 text-lg font-bold uppercase text-dark dark:text-light/75">
                 Biography
               </h2>
-              <p className="px-4 sm:px-24 py-1 font-semibold ">
+              <p className="px-4 sm:px-24 py-1 font-semibold">
                 I am a passionate web developer specializing in creating
                 dynamic, user-friendly applications using modern technologies.
                 With a strong foundation in JavaScript, React, and Next.js
@@ -46,7 +46,7 @@ const About = () => {
               <img
                 src={profilePic}
                 alt="Mahesh"
-                className="w-full h-auto rounded-2xl border-2 border-solid border-gray-600 lg:w-3/4 lg:h-auto lg:border-4 lg:border-gray-700"
+                className="w-full h-auto rounded-2xl border-2 border-solid border-gray-600 dark:border-gray-400 lg:w-3/4 lg:h-auto lg:border-4 lg:border-gray-700 dark:lg:border-gray-600"
               />
             </div>
           </div>

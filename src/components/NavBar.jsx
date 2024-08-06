@@ -2,7 +2,14 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Logo from "./Logo.jsx";
-import { GithubIcon, TwitterIcon, LinkedInIcon } from "./Icons.jsx";
+import {
+  GithubIcon,
+  TwitterIcon,
+  LinkedInIcon,
+  SunIcon,
+  MoonIcon,
+} from "./Icons.jsx";
+import useThemeSwitcher from "./UseThemeSwitcher.jsx";
 
 // Define animation variants
 const iconVariants = {
@@ -27,6 +34,7 @@ const CustomLink = ({ to, title, className = "" }) => {
 
 // NavBar component
 const NavBar = () => {
+  const [mode, setMode] = useThemeSwitcher();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
 
@@ -49,7 +57,11 @@ const NavBar = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="w-full px-4 py-4 font-medium flex items-center justify-between bg-gray-800 shadow-md relative">
+    <header
+      className={`w-full px-4 py-4 font-medium flex items-center justify-between shadow-md relative ${
+        mode === "dark" ? "bg-gray-900" : "bg-white"
+      }`}
+    >
       <div className="w-full flex items-center justify-between">
         {/* Logo and Menu Toggle */}
         <div className="flex items-center justify-between w-full sm:w-auto">
@@ -78,21 +90,33 @@ const NavBar = () => {
         {/* Centered Navigation */}
         <div className="hidden sm:flex flex-grow items-center justify-center">
           <nav className="flex space-x-4">
-            <CustomLink to="/" title="Home" className="py-2 px-4 text-white" />
+            <CustomLink
+              to="/"
+              title="Home"
+              className={`py-2 px-4 ${
+                mode === "dark" ? "text-white" : "text-black"
+              }`}
+            />
             <CustomLink
               to="/about"
               title="About"
-              className="py-2 px-4 text-white"
+              className={`py-2 px-4 ${
+                mode === "dark" ? "text-white" : "text-black"
+              }`}
             />
             <CustomLink
               to="/projects"
               title="Projects"
-              className="py-2 px-4 text-white"
+              className={`py-2 px-4 ${
+                mode === "dark" ? "text-white" : "text-black"
+              }`}
             />
             <CustomLink
               to="/experience"
               title="Experience"
-              className="py-2 px-4 text-white"
+              className={`py-2 px-4 ${
+                mode === "dark" ? "text-white" : "text-black"
+              }`}
             />
           </nav>
         </div>
@@ -102,7 +126,7 @@ const NavBar = () => {
           <motion.a
             href="https://github.com/3maheshkadam"
             target="_blank"
-            className="w-6 text-white"
+            className={`w-6 ${mode === "dark" ? "text-white" : "text-black"}`}
             rel="noopener noreferrer"
             initial="hidden"
             animate="visible"
@@ -114,7 +138,7 @@ const NavBar = () => {
           <motion.a
             href="https://linkedin.com/in/mahesh-kadam-6a9b13219"
             target="_blank"
-            className="w-6 text-white"
+            className={`w-6 ${mode === "dark" ? "text-white" : "text-black"}`}
             rel="noopener noreferrer"
             initial="hidden"
             animate="visible"
@@ -126,7 +150,7 @@ const NavBar = () => {
           <motion.a
             href="https://x.com/maheshkadam2524"
             target="_blank"
-            className="w-6 text-white"
+            className={`w-6 ${mode === "dark" ? "text-white" : "text-black"}`}
             rel="noopener noreferrer"
             initial="hidden"
             animate="visible"
@@ -135,6 +159,13 @@ const NavBar = () => {
           >
             <TwitterIcon />
           </motion.a>
+          <button onClick={() => setMode(mode === "light" ? "dark" : "light")}>
+            {mode === "dark" ? (
+              <SunIcon className={"fill-current text-white"} />
+            ) : (
+              <MoonIcon className={"fill-current text-black"} />
+            )}
+          </button>
         </nav>
       </div>
 
@@ -143,24 +174,38 @@ const NavBar = () => {
         ref={menuRef}
         className={`${
           isMenuOpen ? "block" : "hidden"
-        } sm:hidden absolute top-full left-0 w-full bg-white shadow-md flex flex-col items-center py-4 z-10`}
+        } sm:hidden absolute top-full left-0 w-full ${
+          mode === "dark" ? "bg-gray-900" : "bg-white"
+        } shadow-md flex flex-col items-center py-4 z-10`}
       >
         <nav className="flex flex-col items-center w-full">
-          <CustomLink to="/" title="Home" className="py-2 px-4 text-black" />
+          <CustomLink
+            to="/"
+            title="Home"
+            className={`py-2 px-4 ${
+              mode === "dark" ? "text-white" : "text-black"
+            }`}
+          />
           <CustomLink
             to="/about"
             title="About"
-            className="py-2 px-4 text-black"
+            className={`py-2 px-4 ${
+              mode === "dark" ? "text-white" : "text-black"
+            }`}
           />
           <CustomLink
             to="/projects"
             title="Projects"
-            className="py-2 px-4 text-black"
+            className={`py-2 px-4 ${
+              mode === "dark" ? "text-white" : "text-black"
+            }`}
           />
           <CustomLink
             to="/experience"
             title="Experience"
-            className="py-2 px-4 text-black"
+            className={`py-2 px-4 ${
+              mode === "dark" ? "text-white" : "text-black"
+            }`}
           />
         </nav>
 
@@ -168,7 +213,7 @@ const NavBar = () => {
           <motion.a
             href="https://github.com/3maheshkadam"
             target="_blank"
-            className="w-6 text-black"
+            className={`w-6 ${mode === "dark" ? "text-white" : "text-black"}`}
             rel="noopener noreferrer"
             initial="hidden"
             animate="visible"
@@ -180,7 +225,7 @@ const NavBar = () => {
           <motion.a
             href="https://linkedin.com/in/mahesh-kadam-6a9b13219"
             target="_blank"
-            className="w-6 text-black"
+            className={`w-6 ${mode === "dark" ? "text-white" : "text-black"}`}
             rel="noopener noreferrer"
             initial="hidden"
             animate="visible"
@@ -192,7 +237,7 @@ const NavBar = () => {
           <motion.a
             href="https://x.com/maheshkadam2524"
             target="_blank"
-            className="w-6 text-black"
+            className={`w-6 ${mode === "dark" ? "text-white" : "text-black"}`}
             rel="noopener noreferrer"
             initial="hidden"
             animate="visible"

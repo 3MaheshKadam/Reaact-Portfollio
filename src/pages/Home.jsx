@@ -14,16 +14,16 @@ import next from "../assets/profile/profile/nextjs.png";
 
 const Home = () => {
   return (
-    <main className="flex items-center text-dark w-full min-h-screen ">
-      <div className=" absolute  left-2 flex   top-20 pt-4 px-2 gap-2   ">
+    <main className="flex items-center text-dark dark:text-light w-full min-h-screen bg-light dark:bg-dark">
+      <div className="absolute left-2 flex top-20 pt-4 px-2 gap-2">
         <img src={mongo} alt="MongoDB" className="w-12 h-12 mb-2" />
         <img src={express} alt="Express" className="w-12 h-12 mb-2" />
         <img src={reactt} alt="React" className="w-12 h-12 mb-2" />
         <img src={node} alt="Node.js" className="w-12 h-12 mb-2" />
         <img src={next} alt="Next.js" className="w-12 h-12 mb-2" />
       </div>
-      <div className="layout p-0 ">
-        <div className="flex items-center justify-between  w-full  bg-slate-400 ">
+      <div className="layout p-0">
+        <div className="flex items-center justify-between w-full bg-slate-300 dark:bg-slate-800">
           <div className="w-1/2">
             <img src={profilePic} alt="Mahesh" className="w-full px-20" />
           </div>
@@ -42,7 +42,7 @@ const Home = () => {
                 href={dummy}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark"
+                className="flex items-center bg-dark dark:bg-light text-light dark:text-dark p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light dark:hover:bg-dark hover:text-dark dark:hover:text-light border-2 border-solid border-transparent hover:border-dark dark:hover:border-light"
                 download
               >
                 Resume
@@ -52,7 +52,7 @@ const Home = () => {
                 href="mailto:maheshkadam9298@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-4 text-lg font-semibold text-dark hover:underline"
+                className="ml-4 text-lg font-semibold text-dark dark:text-light hover:underline"
               >
                 Contact
               </a>
@@ -61,7 +61,7 @@ const Home = () => {
         </div>
       </div>
       <HireMe />
-      <div className="absolute sm:z-0 lg:z-10 right-6   top-20 inline-block w-24 ">
+      <div className="absolute sm:z-0 lg:z-10 right-6 top-20 inline-block w-24">
         <img src={lightBulb} alt="Filament" className="w-full h-auto" />
       </div>
     </main>
