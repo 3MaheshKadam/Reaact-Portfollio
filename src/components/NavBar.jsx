@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Logo from "./Logo.jsx";
 import {
@@ -25,10 +24,10 @@ const iconVariants = {
 // CustomLink component
 const CustomLink = ({ to, title, className = "" }) => {
   return (
-    <Link to={to} className={`${className} group relative`}>
+    <a href={to} className={`${className} group relative`}>
       {title}
       &nbsp;
-    </Link>
+    </a>
   );
 };
 
@@ -91,28 +90,28 @@ const NavBar = () => {
         <div className="hidden sm:flex flex-grow items-center justify-center">
           <nav className="flex space-x-4">
             <CustomLink
-              to="/"
+              to="#home"
               title="Home"
               className={`py-2 px-4 ${
                 mode === "dark" ? "text-white" : "text-black"
               }`}
             />
             <CustomLink
-              to="/about"
+              to="#about"
               title="About"
               className={`py-2 px-4 ${
                 mode === "dark" ? "text-white" : "text-black"
               }`}
             />
             <CustomLink
-              to="/projects"
+              to="#projects"
               title="Projects"
               className={`py-2 px-4 ${
                 mode === "dark" ? "text-white" : "text-black"
               }`}
             />
             <CustomLink
-              to="/experience"
+              to="#experience"
               title="Experience"
               className={`py-2 px-4 ${
                 mode === "dark" ? "text-white" : "text-black"
@@ -180,28 +179,28 @@ const NavBar = () => {
       >
         <nav className="flex flex-col items-center w-full">
           <CustomLink
-            to="/"
+            to="#home"
             title="Home"
             className={`py-2 px-4 ${
               mode === "dark" ? "text-white" : "text-black"
             }`}
           />
           <CustomLink
-            to="/about"
+            to="#about"
             title="About"
             className={`py-2 px-4 ${
               mode === "dark" ? "text-white" : "text-black"
             }`}
           />
           <CustomLink
-            to="/projects"
+            to="#projects"
             title="Projects"
             className={`py-2 px-4 ${
               mode === "dark" ? "text-white" : "text-black"
             }`}
           />
           <CustomLink
-            to="/experience"
+            to="#experience"
             title="Experience"
             className={`py-2 px-4 ${
               mode === "dark" ? "text-white" : "text-black"

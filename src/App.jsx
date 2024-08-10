@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import NavBar from "./components/NavBar.jsx";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
@@ -13,17 +13,25 @@ function App() {
 
   return (
     <div className={mode === "dark" ? "dark" : ""}>
-      {" "}
       {/* Apply the theme class */}
       <Router>
         <NavBar mode={mode} setMode={setMode} />{" "}
         {/* Pass theme props to NavBar */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/experience" element={<Experience />} />
-        </Routes>
+        <div className="flex flex-col">
+          {/* Wrap each section in a `section` element */}
+          <section id="home">
+            <Home />
+          </section>
+          <section id="about">
+            <About />
+          </section>
+          <section id="projects">
+            <Projects />
+          </section>
+          <section id="experience">
+            <Experience />
+          </section>
+        </div>
         <Footer />
       </Router>
     </div>
