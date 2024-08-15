@@ -25,7 +25,11 @@ const Home = () => {
       <div className="layout p-0">
         <div className="flex items-center justify-between w-full bg-slate-300 dark:bg-slate-800">
           <div className="w-1/2">
-            <img src={profilePic} alt="Mahesh" className="w-full px-20" />
+            <img
+              src={profilePic}
+              alt="Mahesh"
+              className="w-full px-20 bg-slate-300 dark:bg-slate-800"
+            />
           </div>
           <div className="w-1/2 flex flex-col items-center self-center">
             <AnimatedText
