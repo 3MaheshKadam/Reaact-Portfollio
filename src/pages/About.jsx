@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import AnimatedText from "../components/AnimatedText";
 import profilePic from "../assets/profile/profile/kurta_png.png";
+import profilePicc from "../assets/profile/profile/developer-pic-1.png";
 
 const About = () => {
   return (
@@ -43,10 +44,17 @@ const About = () => {
               </p>
             </div>
             <div className="col-span-1 md:col-span-2 lg:col-span-2 flex justify-center lg:justify-end items-center lg:mx-4">
+              {/* Profile picture for small screens */}
+              <img
+                src={profilePicc}
+                alt="Mahesh"
+                className="block md:hidden w-full h-auto rounded-2xl border-2 border-solid border-gray-600 dark:border-gray-400 lg:w-3/4 lg:h-auto lg:border-4 lg:border-gray-700 dark:lg:border-gray-600"
+              />
+              {/* Profile picture for medium screens and larger */}
               <img
                 src={profilePic}
                 alt="Mahesh"
-                className="w-full h-auto rounded-2xl border-2 border-solid border-gray-600 dark:border-gray-400 lg:w-3/4 lg:h-auto lg:border-4 lg:border-gray-700 dark:lg:border-gray-600"
+                className="hidden md:block w-full h-auto rounded-2xl border-2 border-solid border-gray-600 dark:border-gray-400 lg:w-3/4 lg:h-auto lg:border-4 lg:border-gray-700 dark:lg:border-gray-600"
               />
             </div>
           </div>

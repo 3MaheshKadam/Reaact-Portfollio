@@ -66,7 +66,9 @@ const NavBar = () => {
         <div className="flex items-center justify-between w-full sm:w-auto">
           <Logo />
           <button
-            className="block sm:hidden px-2 py-1 text-white ml-4"
+            className={`block sm:hidden px-2 py-1 ${
+              mode === "dark" ? "text-white" : "text-black"
+            } ml-4`}
             onClick={toggleMenu}
           >
             <svg
@@ -158,14 +160,19 @@ const NavBar = () => {
           >
             <TwitterIcon />
           </motion.a>
-          <button onClick={() => setMode(mode === "light" ? "dark" : "light")}>
-            {mode === "dark" ? (
-              <SunIcon className={"fill-current text-white"} />
-            ) : (
-              <MoonIcon className={"fill-current text-black"} />
-            )}
-          </button>
         </nav>
+        <button
+          className={`block ml-2 p-2 rounded-full ${
+            mode === "dark" ? "bg-gray-700" : "bg-gray-300"
+          }`}
+          onClick={() => setMode(mode === "light" ? "dark" : "light")}
+        >
+          {mode === "dark" ? (
+            <SunIcon className="fill-current text-white" />
+          ) : (
+            <MoonIcon className="fill-current text-black" />
+          )}
+        </button>
       </div>
 
       {/* Mobile Menu */}

@@ -23,25 +23,26 @@ const Home = () => {
         <img src={next} alt="Next.js" className="w-12 h-12 mb-2" />
       </div>
       <div className="layout p-0">
-        <div className="flex items-center justify-between w-full bg-slate-300 dark:bg-slate-800">
-          <div className="w-1/2">
+        <div className="flex flex-col md:flex-row items-center justify-between w-full bg-slate-300 dark:bg-slate-800">
+          <div className="w-full md:w-1/2 flex justify-center">
+            {/* Only display the image on md screens and larger */}
             <img
               src={profilePic}
               alt="Mahesh"
-              className="w-full px-20 bg-slate-300 dark:bg-slate-800"
+              className="hidden md:block w-full px-20 bg-slate-300 dark:bg-slate-800"
             />
           </div>
-          <div className="w-1/2 flex flex-col items-center self-center">
+          <div className="w-full md:w-1/2 flex flex-col items-center self-center text-center p-8 md:text-left">
             <AnimatedText
               text={"I'm Mahesh, A MERN stack developer."}
-              className="!text-left !text-xl md:!text-4xl lg:!text-8xl"
+              className="!text-xl md:!text-4xl lg:!text-8xl"
             />
             <p className="my-4 text-base font-medium">
               As a skilled full-stack developer, I am dedicated to turning ideas
               into innovative web applications. Explore my latest projects and
               articles, showcasing my expertise in React.js and web development.
             </p>
-            <div className="flex items-center self-start mt-2">
+            <div className="flex flex-col md:flex-row items-center self-center md:self-start mt-2">
               <a
                 href={dummy}
                 target="_blank"
@@ -56,7 +57,7 @@ const Home = () => {
                 href="mailto:maheshkadam9298@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-4 text-lg font-semibold text-dark dark:text-light hover:underline"
+                className="mt-4 md:mt-0 md:ml-4 text-lg font-semibold text-dark dark:text-light hover:underline"
               >
                 Contact
               </a>
