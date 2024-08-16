@@ -22,15 +22,27 @@ const iconVariants = {
 };
 
 // CustomLink component
-const CustomLink = ({ to, title, className = "" }) => {
+// CustomLink component with hover effect
+const CustomLink = ({ to, title, className = "", mode }) => {
   return (
-    <a href={to} className={`${className} group relative`}>
-      {title}
+    <a
+      href={to}
+      className={`${className} group relative transition-transform duration-300 ease-in-out transform hover:scale-105`}
+    >
+      <span
+        className={`relative z-10 ${className} ${
+          mode === "dark" ? "hover:text-gray-400 " : "hover:text-gray-600 "
+        }`}
+      >
+        {title}
+      </span>
       &nbsp;
+      <span
+        className={`absolute inset-x-0 bottom-0 h-0.5 transform bg-current scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ease-in-out`}
+      ></span>
     </a>
   );
 };
-
 // NavBar component
 const NavBar = () => {
   const [mode, setMode] = useThemeSwitcher();

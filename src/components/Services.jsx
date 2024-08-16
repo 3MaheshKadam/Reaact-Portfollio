@@ -1,5 +1,6 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import web from "../assets/profile/services/web.png";
 import backend from "../assets/profile/services/backend.png";
 import custom from "../assets/profile/services/custom.png";
@@ -9,13 +10,26 @@ import maintainance from "../assets/profile/services/maintainance.png";
 import AnimatedText from "./AnimatedText.jsx";
 
 const Services = () => {
+  const controls = useAnimation();
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1, y: 0 });
+    }
+  }, [controls, inView]);
+
   return (
     // Services Section
     <motion.div
+      ref={ref} // Attach ref to the motion.div
       className="mt-10 w-full bg-gray-300 dark:bg-gray-800 p-4 sm:p-8"
       initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
+      animate={controls} // Use the controls to animate when in view
+      transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <AnimatedText
         text="Services I Offer"

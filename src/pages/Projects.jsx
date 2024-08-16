@@ -1,5 +1,6 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import ecom from "../assets/profile/projects/ecom.png";
 import estate from "../assets/profile/projects/estate.png";
 import movies from "../assets/profile/projects/movies.png";
@@ -37,6 +38,22 @@ const projects = [
 ];
 
 const Projects = () => {
+  const controls = useAnimation();
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Ensures the animation only runs once
+    threshold: 0.3, // Adjust this threshold as needed
+  });
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start((i) => ({
+        opacity: 1,
+        y: 0,
+        transition: { delay: i * 0.2, duration: 0.8, ease: "easeOut" },
+      }));
+    }
+  }, [controls, inView]);
+
   const handleClick = (link) => {
     window.open(link, "_blank");
   };
@@ -47,17 +64,18 @@ const Projects = () => {
         <h2 className="text-3xl font-bold text-center mb-8 text-dark dark:text-light">
           Projects
         </h2>
-        <motion.div
+        <div
+          ref={ref} // Reference attached here
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <motion.div
               key={project.id}
               className="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden cursor-pointer"
               onClick={() => handleClick(project.link)}
+              initial={{ opacity: 0, y: 50 }}
+              animate={controls}
+              custom={index}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -75,7 +93,7 @@ const Projects = () => {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -4,12 +4,6 @@ import AnimatedText from "../components/AnimatedText";
 import profilePic from "../assets/profile/profile/kurta_png.png";
 import profilePicc from "../assets/profile/profile/developer-pic-1.png";
 import { motion } from "framer-motion";
-import web from "../assets/profile/services/web.png";
-import backend from "../assets/profile/services/backend.png";
-import custom from "../assets/profile/services/custom.png";
-import api from "../assets/profile/services/api.png";
-import Consultation from "../assets/profile/services/Consultation.png";
-import maintainance from "../assets/profile/services/maintainance.png";
 
 const About = () => {
   return (
@@ -43,21 +37,18 @@ const About = () => {
                 Biography
               </h2>
               <p className="px-4 sm:px-24 py-1 font-semibold">
-                I am a passionate web developer specializing in creating
-                dynamic, user-friendly applications using modern technologies.
-                With a strong foundation in JavaScript, React, and Next.js.
+                I am a passionate web developer with expertise in JavaScript,
+                React, and Next.js, focused on crafting dynamic, user-friendly
+                applications.
               </p>
               <p className="px-4 sm:px-24 py-1 font-semibold">
-                I excel at delivering seamless and intuitive user experiences.
-                My background in both front-end and back-end development allows
-                me to tackle complex projects and provide comprehensive
-                solutions tailored to meet the unique needs of each client.
+                My experience spans both front-end and back-end development,
+                allowing me to deliver seamless, comprehensive solutions. Having
+                worked on real-time projectsnt.
               </p>
               <p className="px-4 sm:px-24 py-1 font-semibold">
-                My experience includes working on real-time projects for
-                clients. As an enthusiastic learner who enjoys the development
-                process, I am eager to take on new challenges, collaborate with
-                others, and contribute to the success of every project I handle.
+                I am an enthusiastic learner who thrives on tackling challenges
+                and contributing to project success.
               </p>
             </motion.div>
             <motion.div
@@ -106,7 +97,6 @@ const About = () => {
               </div>
             </div>
           </motion.div>
-         
         </div>
       </main>
     </>
