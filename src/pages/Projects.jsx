@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion"; // Import Framer Motion
 import ecom from "../assets/profile/projects/ecom.jpg";
 import estate from "../assets/profile/projects/estate.png";
 import movies from "../assets/profile/projects/movies.png";
@@ -46,26 +47,35 @@ const Projects = () => {
         <h2 className="text-3xl font-bold text-center mb-8 text-dark dark:text-light">
           Projects
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+          initial={{ opacity: 0, y: 50 }} // Initial state: hidden and below the view
+          animate={{ opacity: 1, y: 0 }} // Final state: visible and at its original position
+          transition={{ duration: 0.8, ease: "easeOut" }} // Animation duration and easing
+        >
           {projects.map((project) => (
-            <div
+            <motion.div
               key={project.id}
-              className="bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden cursor-pointer"
+              className="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden cursor-pointer"
               onClick={() => handleClick(project.link)}
+              whileHover={{ scale: 1.05 }} // Scale up slightly on hover
+              whileTap={{ scale: 0.95 }} // Scale down slightly on tap/click
             >
-              <img
+              <motion.img
                 src={project.image}
                 alt={project.title}
                 className="w-full h-48 object-cover"
+                whileHover={{ scale: 1.1 }} // Zoom in image slightly on hover
+                transition={{ duration: 0.3 }} // Smooth transition for the hover effect
               />
               <div className="p-4">
-                <h3 className="text-xl font-semibold text-dark dark:text-light">
+                <h3 className="text-xl font-semibold text-dark dark:text-light text-center">
                   {project.title}
                 </h3>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
