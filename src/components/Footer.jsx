@@ -5,7 +5,7 @@ import insta from "../assets/profile/profile/instagram.png";
 
 const Footer = () => {
   return (
-    <footer className="w-full py-20 bg-gray-800 text-white">
+    <footer className="w-full p-20 bg-gray-800 text-white">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center">
         {/* About Section */}
         <div className="md:w-1/3 mb-8 md:mb-0">
