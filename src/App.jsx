@@ -7,6 +7,7 @@ import Projects from "./pages/Projects.jsx";
 import Experience from "./pages/Experience.jsx";
 import Footer from "./components/Footer.jsx";
 import useThemeSwitcher from "./components/UseThemeSwitcher.jsx";
+import Services from "./components/Services.jsx";
 
 function App() {
   const [mode, setMode] = useThemeSwitcher(); // Use the theme switcher hook
@@ -24,6 +25,9 @@ function App() {
           </section>
           <section id="about">
             <About />
+          </section>
+          <section id="services">
+            <Services />
           </section>
           <section id="projects">
             <Projects />

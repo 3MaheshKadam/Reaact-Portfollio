@@ -36,12 +36,18 @@ const NavBar = () => {
   const [mode, setMode] = useThemeSwitcher();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
+  const toggleButtonRef = useRef(null); // Ref for the toggle button
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        toggleButtonRef.current &&
+        !toggleButtonRef.current.contains(event.target)
+      ) {
         setIsMenuOpen(false);
       }
     };
@@ -66,6 +72,7 @@ const NavBar = () => {
         <div className="flex items-center justify-between w-full sm:w-auto">
           <Logo />
           <button
+            ref={toggleButtonRef}
             className={`block sm:hidden px-2 py-1 ${
               mode === "dark" ? "text-white" : "text-black"
             } ml-4`}
@@ -101,6 +108,13 @@ const NavBar = () => {
             <CustomLink
               to="#about"
               title="About"
+              className={`py-2 px-4 ${
+                mode === "dark" ? "text-white" : "text-black"
+              }`}
+            />
+            <CustomLink
+              to="#services"
+              title="Services"
               className={`py-2 px-4 ${
                 mode === "dark" ? "text-white" : "text-black"
               }`}
@@ -195,6 +209,13 @@ const NavBar = () => {
           <CustomLink
             to="#about"
             title="About"
+            className={`py-2 px-4 ${
+              mode === "dark" ? "text-white" : "text-black"
+            }`}
+          />
+          <CustomLink
+            to="#services"
+            title="Services"
             className={`py-2 px-4 ${
               mode === "dark" ? "text-white" : "text-black"
             }`}
