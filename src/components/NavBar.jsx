@@ -21,13 +21,21 @@ const iconVariants = {
   },
 };
 
-// CustomLink component
-// CustomLink component with hover effect
+// CustomLink component with smooth scroll effect
 const CustomLink = ({ to, title, className = "", mode }) => {
+  const handleClick = (e) => {
+    e.preventDefault();
+    const targetElement = document.querySelector(to);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <a
       href={to}
       className={`${className} group relative transition-transform duration-300 ease-in-out transform hover:scale-105`}
+      onClick={handleClick}
     >
       <span
         className={`relative z-10 ${className} ${
@@ -43,6 +51,7 @@ const CustomLink = ({ to, title, className = "", mode }) => {
     </a>
   );
 };
+
 // NavBar component
 const NavBar = () => {
   const [mode, setMode] = useThemeSwitcher();

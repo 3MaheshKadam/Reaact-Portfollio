@@ -8,13 +8,6 @@ import { motion } from "framer-motion";
 const About = () => {
   return (
     <>
-      <Helmet>
-        <title>Filament | About Page</title>
-        <meta
-          name="description"
-          content="A passionate web developer specializing in dynamic applications and modern technologies."
-        />
-      </Helmet>
       <main className="flex w-full flex-col items-center justify-center bg-light dark:bg-dark text-dark dark:text-light">
         <div className="p-4 sm:p-8">
           <AnimatedText
