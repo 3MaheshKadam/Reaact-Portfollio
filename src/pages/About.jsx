@@ -76,18 +76,18 @@ const About = () => {
               text="Professional Statistics"
             />
             <div className="flex flex-col md:flex-row md:space-x-8">
-              <div className="flex flex-col items-center mb-4 md:mb-0">
+              {/* <div className="flex flex-col items-center mb-4 md:mb-0">
                 <div className="text-3xl font-semibold">2+</div>
                 <div className="text-lg font-semibold">Satisfied Clients</div>
-              </div>
+              </div> */}
               <div className="flex flex-col items-center mb-4 md:mb-0">
                 <div className="text-3xl font-semibold">5+</div>
                 <div className="text-lg font-semibold">Projects Completed</div>
               </div>
-              <div className="flex flex-col items-center">
+              {/* <div className="flex flex-col items-center">
                 <div className="text-3xl font-semibold">1</div>
                 <div className="text-lg font-semibold">Years of Experience</div>
-              </div>
+              </div> */}
             </div>
           </motion.div>
         </div>

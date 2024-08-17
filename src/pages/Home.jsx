@@ -2,16 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import profilePic from "../assets/profile/profile/developer-pic-1.png";
 import AnimatedText from "../components/AnimatedText";
-import dummy from "../assets/dummy.pdf";
+import Mahesh_Resume from "../assets/Mahesh_Resume.pdf";
 import { LinkArrow } from "../components/Icons.jsx";
 import HireMe from "../components/HireMe.jsx";
-import lightBulb from "../assets/profile/svgs/miscellaneous_icons_1.svg";
 import reactt from "../assets/profile/profile/react.png";
 import mongo from "../assets/profile/profile/mongodb.png";
 import express from "../assets/profile/profile/expressjs.png";
 import node from "../assets/profile/profile/node.png";
 import next from "../assets/profile/profile/nextjs.png";
-
+import darkbulb from "../assets/profile/profile/darkbulb.png";
+// import lightbulb from "../assets/profile/profile/lightbulb.png";
+import lightBulb from "../assets/profile/svgs/miscellaneous_icons_1.svg";
 const Home = () => {
   return (
     <main className="flex items-center text-dark dark:text-light w-full min-h-screen bg-light dark:bg-dark sm:px-2">
@@ -43,7 +44,7 @@ const Home = () => {
             </p>
             <div className="flex flex-col md:flex-row items-center self-center md:self-start mt-2">
               <a
-                href={dummy}
+                href={Mahesh_Resume}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center bg-dark dark:bg-light text-light dark:text-dark p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light dark:hover:bg-dark hover:text-dark dark:hover:text-light border-2 border-solid border-transparent hover:border-dark dark:hover:border-light"
@@ -65,8 +66,17 @@ const Home = () => {
         </div>
       </div>
       <HireMe />
-      <div className="absolute sm:z-0 lg:z-10 right-6 top-20 inline-block w-24 ">
-        <img src={lightBulb} alt="Filament" className="w-full h-auto" />
+      <div className="absolute sm:z-0 lg:z-10 right-6 top-20 inline-block w-24">
+        <img
+          src={lightBulb} // Default light mode SVG
+          alt="Light Bulb"
+          className="w-full h-auto dark:hidden" // Hide in dark mode
+        />
+        <img
+          src={darkbulb} // Dark mode SVG
+          alt="Light Bulb"
+          className="w-full h-auto hidden dark:block" // Hide in light mode
+        />
       </div>
     </main>
   );
